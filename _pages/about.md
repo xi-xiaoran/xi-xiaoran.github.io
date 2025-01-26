@@ -10,4 +10,4 @@ My name is Yang Zhen, and I graduated from  [Nanjing University of Posts and Tel
 
 My main research areas are computer vision, medical image segmentation, and uncertainty modeling.
 
-You can find my CV here:  [YZ's Curriculum Vitae](URL).
+You can find my CV here:  [English Curriculum Vitae](../assets/EnglishCV.pdf)[Chinese Curriculum Vitae](../assets/ChineseCV.pdf).
