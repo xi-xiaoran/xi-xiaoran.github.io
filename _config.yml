@@ -7,12 +7,12 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
-title                    : "Your Name / Site Title"
+locale                   : "CN"
+title                    : "Zhen Yang / Site Title"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Zhen Yang"
 description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+url                      : https://xi-xiaoran.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
@@ -22,10 +22,10 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Zhen Yang(杨禛)"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
+  bio              : "Usually very lazy"
+  location         : "Nanjing"
   employer         : "Red Brick University"
   uri              : # URL
   email            : "none@example.org" 
