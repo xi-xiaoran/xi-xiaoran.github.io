@@ -1,0 +1,13 @@
+main:
+  - title: "Academic"
+    url: "/#academic-experience"
+  - title: "Industry"
+    url: "/#industry-experience"
+  - title: "Publications"
+    url: "/#publications"
+  - title: "Projects"
+    url: "/#projects"
+  - title: "Life"
+    url: "/#life-updates"
+  - title: "CV"
+    url: "/files/CV_English.pdf"

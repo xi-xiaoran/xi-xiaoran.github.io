@@ -1,0 +1,39 @@
+items:
+  - title: "Evidential U-KAN for Trustworthy Medical Image Segmentation"
+    authors: "Zhen Yang*, Yansong Ma, Lei Chen (*independent first author)"
+    figure: "/images/papers/evidential_ukan_teaser.png"
+    venue: "arXiv preprint"
+    year: "2025"
+    keywords: ["Medical Image Segmentation", "Evidential Deep Learning", "Uncertainty"]
+    teaser: "A progressive uncertainty-guided attention framework that strengthens boundary awareness and preserves semantic evidence for reliable medical segmentation."
+    abstract: |
+      Trustworthy medical image segmentation aims to deliver accurate and reliable results for clinical decision-making.
+      Most existing methods adopt the evidential deep learning (EDL) paradigm due to its computational efficiency and theoretical robustness.
+      However, EDL-based methods often neglect leveraging uncertainty maps rich in attention cues to refine ambiguous boundary segmentation.
+      To address this, we propose a progressive evidence uncertainty-guided attention (PEUA) mechanism to guide the model to focus on hard regions.
+      PEUA progressively refines attention using uncertainty maps while employing low-rank learning to denoise attention weights.
+      We further introduce a semantic-preserving evidence learning (SAEL) strategy that retains critical semantics through a semantic-smooth evidence generator and fidelity-enhancing regularization.
+      By embedding PEUA and SAEL into the state-of-the-art U-KAN, we propose Evidential U-KAN for trustworthy medical image segmentation.
+      Extensive experiments across four datasets demonstrate superior accuracy and reliability over competing methods.
+    paper_link: "https://arxiv.org/abs/2510.08949"
+    code_link: "https://github.com/xi-xiaoran/Evidential-U-KAN"
+
+  - title: "Meta-Policy Controller for Dynamic Uncertainty Calibration in Evidential Deep Learning"
+    authors: "Zhen Yang*, Yansong Ma, Lei Chen (*independent first author)"
+    figure: "/images/papers/mpc_teaser.png"
+    venue: "arXiv preprint; CVPR 2026 (under review)"
+    year: "2025"
+    keywords: ["Reinforcement Learning", "Meta-Learning", "Evidential Deep Learning", "Calibration"]
+    teaser: "A bi-level meta-policy framework that dynamically optimizes KL regularization and learnable Dirichlet priors for robust uncertainty calibration."
+    abstract: |
+      Traditional evidential deep learning methods rely on static hyperparameters for uncertainty calibration,
+      limiting adaptability under dynamic training states and shifting data distributions.
+      We propose the Meta-Policy Controller (MPC), a dynamic meta-learning framework that adjusts the KL divergence coefficient
+      and class-specific Dirichlet prior strengths through bi-level optimization.
+      In the inner loop, model parameters are updated with a dynamically configured loss function.
+      In the outer loop, a policy network learns to balance multi-objective rewards that consider both predictive accuracy
+      and uncertainty quality.
+      Unlike fixed uniform priors, our learnable Dirichlet prior flexibly adapts to class distributions and training dynamics.
+      Experiments show improved reliability and calibration across classification, medical segmentation, and OOD detection tasks.
+    paper_link: "https://arxiv.org/abs/2510.08938"
+    code_link: "https://github.com/xi-xiaoran/Meta-Policy-Controller"

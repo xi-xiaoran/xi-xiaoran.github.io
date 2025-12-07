@@ -1,0 +1,263 @@
+/* Base */
+:root { --maxw: 980px; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 10;
+}
+
+.site-header__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.85rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #111;
+}
+
+.site-nav {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.site-nav__link {
+  color: #222;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.site-nav__toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.1rem;
+}
+
+.site-main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem 1rem;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding: 1.5rem 1rem;
+}
+
+.site-footer__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.hero__avatar img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.placeholder-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.06);
+}
+
+.hero__name {
+  margin: 0 0 0.2rem 0;
+  font-size: 2rem;
+}
+
+.hero__tagline {
+  margin: 0 0 0.6rem 0;
+  opacity: 0.85;
+}
+
+.hero__links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  opacity: 0.9;
+}
+
+/* Sections */
+.divider {
+  margin: 1.6rem 0;
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.home-section { margin: 2.2rem 0; }
+
+.card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.card__logo img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.meta {
+  font-size: 0.9rem;
+  opacity: 0.65;
+  margin-bottom: 0.15rem;
+}
+
+.sub {
+  opacity: 0.85;
+  margin-bottom: 0.35rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.35rem 0 0.6rem 0;
+}
+
+.chip {
+  font-size: 0.78rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.links {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.details summary {
+  cursor: pointer;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Mobile nav */
+@media (max-width: 860px) {
+  .site-header__inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    padding-top: 0.6rem;
+  }
+
+  body.nav-open .site-nav {
+    display: flex;
+  }
+
+  #latest-cv {
+  padding-top: 0.5rem;
+  }
+  #latest-cv .links a {
+    font-weight: 500;
+  }
+
+  .cv-links {
+  display: grid;
+  gap: 0.5rem;
+  }
+
+  .cv-link-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: baseline;
+  }
+
+  .cv-updated {
+    font-size: 0.9rem;
+    opacity: 0.65;
+  }
+  .anime-buddy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  }
+
+  #anime-buddy-img {
+    width: 160px;
+    max-width: 40vw;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  .anime-buddy__text {
+    min-width: 220px;
+    flex: 1;
+  }
+
+  .anime-buddy__quote {
+    font-size: 1.05rem;
+    margin: 0 0 0.4rem 0;
+  }
+
+  .anime-buddy__meta,
+  .anime-buddy__credit {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin: 0.1rem 0;
+  }
+
+  .anime-buddy__btn {
+    margin-top: 0.6rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: transparent;
+    cursor: pointer;
+  }
+
+
+  .site-nav__toggle { display: inline-block; }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}

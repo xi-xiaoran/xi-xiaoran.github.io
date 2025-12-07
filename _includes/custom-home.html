@@ -1,0 +1,226 @@
+<section class="hero">
+  <div class="hero__left">
+    <div class="hero__avatar placeholder-avatar">
+      <img src="{{ '/images/avatar.jpg' | relative_url }}" alt="Zhen Yang">
+    </div>
+  </div>
+
+  <div class="hero__right">
+    <h1 class="hero__name">{{ site.title }}</h1>
+    <p class="hero__tagline">{{ site.description }}</p>
+
+    <div class="hero__links">
+      <a href="{{ '/files/CV_English.pdf' | relative_url }}">CV</a>
+      <span>·</span>
+      <a href="mailto:2646594598@qq.com">Email</a>
+      <span>·</span>
+      <a href="https://github.com/xi-xiaoran">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<section id="academic-experience" class="home-section">
+  <h2>Academic Experience</h2>
+  {% for x in site.data.home_academic.items %}
+    <div class="card">
+      <div class="card__logo">
+        {% if x.school_logo %}
+          <img src="{{ x.school_logo | relative_url }}" alt="{{ x.institution }} logo">
+        {% endif %}
+      </div>
+      <div class="card__body">
+        <div class="meta">{{ x.start }} – {{ x.end }} · {{ x.location }}</div>
+        <h3>{{ x.institution }}</h3>
+        <div class="sub">
+          {{ x.school_unit }} · {{ x.program }}
+          {% if x.advisor %}<br/>Advisor: {{ x.advisor }}{% endif %}
+        </div>
+        {% if x.highlights %}
+          <ul>
+            {% for b in x.highlights %}
+              <li>{{ b }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+<section id="industry-experience" class="home-section">
+  <h2>Industry Experience</h2>
+  {% for x in site.data.home_industry.items %}
+    <div class="card">
+      <div class="card__logo">
+        {% if x.company_logo %}
+          <img src="{{ x.company_logo | relative_url }}" alt="{{ x.company }} logo">
+        {% endif %}
+      </div>
+      <div class="card__body">
+        <div class="meta">{{ x.start }} – {{ x.end }} · {{ x.location }}</div>
+        <h3>{{ x.role }} · {{ x.company }}</h3>
+        <p>{{ x.summary }}</p>
+        {% if x.bullets %}
+          <ul>
+            {% for b in x.bullets %}
+              <li>{{ b }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+<section id="publications" class="home-section">
+  <h2>Publications</h2>
+  {% for p in site.data.home_publications.items %}
+    <div class="card card--paper">
+      <div class="card__logo">
+        {% if p.figure %}
+          <img src="{{ p.figure | relative_url }}" alt="{{ p.title }} figure">
+        {% endif %}
+      </div>
+      <div class="card__body">
+        <div class="meta">{{ p.venue }} · {{ p.year }}</div>
+        <h3>{{ p.title }}</h3>
+        <div class="sub">{{ p.authors }}</div>
+
+        {% if p.keywords %}
+          <div class="chips">
+            {% for k in p.keywords %}
+              <span class="chip">{{ k }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if p.teaser %}
+          <p>{{ p.teaser }}</p>
+        {% endif %}
+
+        {% if p.abstract %}
+          <details class="details">
+            <summary>Show abstract</summary>
+            <div class="details__content">
+              {{ p.abstract | markdownify }}
+            </div>
+          </details>
+        {% endif %}
+
+        <div class="links">
+          {% if p.paper_link and p.paper_link != "" %}<a href="{{ p.paper_link }}">Paper</a>{% endif %}
+          {% if p.code_link and p.code_link != "" %}<a href="{{ p.code_link }}">Code</a>{% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+<section id="projects" class="home-section">
+  <h2>Projects</h2>
+  {% for pr in site.data.home_projects.items %}
+    <div class="card">
+      <div class="card__logo">
+        {% if pr.logo %}
+          <img src="{{ pr.logo | relative_url }}" alt="{{ pr.title }} logo">
+        {% endif %}
+      </div>
+      <div class="card__body">
+        <h3>{{ pr.title }}</h3>
+
+        {% if pr.keywords %}
+          <div class="chips">
+            {% for k in pr.keywords %}
+              <span class="chip">{{ k }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if pr.teaser %}
+          <p>{{ pr.teaser }}</p>
+        {% endif %}
+
+        {% if pr.details %}
+          <details class="details">
+            <summary>Show more</summary>
+            <div class="details__content">
+              {{ pr.details | markdownify }}
+            </div>
+          </details>
+        {% endif %}
+
+        <div class="links">
+          {% if pr.link and pr.link != "" %}<a href="{{ pr.link }}">Project</a>{% endif %}
+          {% if pr.github_repo and pr.github_repo != "" %}
+            <span class="github-stars" data-repo="{{ pr.github_repo }}">
+              ★ <span class="github-stars__count">—</span>
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+<section id="life-updates" class="home-section">
+  <h2>Life Updates</h2>
+  {% for x in site.data.home_life.items %}
+    <div class="card">
+      <div class="card__logo">
+        {% if x.logo %}
+          <img src="{{ x.logo | relative_url }}" alt="{{ x.title }} logo">
+        {% endif %}
+      </div>
+      <div class="card__body">
+        <div class="meta">{{ x.date }}</div>
+        <h3>{{ x.title }}</h3>
+        <p>{{ x.summary }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+<section id="latest-cv" class="home-section">
+  <h2>Latest CV</h2>
+
+  {% assign cv = site.data.home_cv %}
+
+  <div class="cv-links">
+    <div class="cv-link-item">
+      <a href="{{ cv.english.file | relative_url }}">{{ cv.english.label }}</a>
+      <span class="cv-updated">Last updated: {{ cv.english.updated }}</span>
+    </div>
+
+    <div class="cv-link-item">
+      <a href="{{ cv.chinese.file | relative_url }}">{{ cv.chinese.label }}</a>
+      <span class="cv-updated">Last updated: {{ cv.chinese.updated }}</span>
+    </div>
+  </div>
+</section>
+
+<div class="fun-card" id="random-anime-buddy">
+  <h3>Random Anime Buddy</h3>
+  <p class="fun-hint">A tiny gacha that refreshes your mood. New buddy on every reload.</p>
+
+  <div class="anime-buddy">
+    <img id="anime-buddy-img" alt="Random anime character" loading="lazy" />
+    <div class="anime-buddy__text">
+      <p id="anime-buddy-quote" class="anime-buddy__quote">Loading...</p>
+      <p id="anime-buddy-meta" class="anime-buddy__meta"></p>
+      <p id="anime-buddy-credit" class="anime-buddy__credit"></p>
+
+      <button id="anime-buddy-refresh" class="anime-buddy__btn" type="button">
+        Another roll
+      </button>
+    </div>
+  </div>
+</div>
+
+<script defer src="{{ '/assets/js/anime-buddy.js' | relative_url }}"></script>
+
+
+
+
+<script src="{{ '/assets/js/github-stars.js' | relative_url }}"></script>

@@ -1,0 +1,14 @@
+title: "Zhen Yang"
+description: "Research-oriented developer focusing on uncertainty, reinforcement learning, and trustworthy ML."
+url: "https://xi-xiaoran.github.io"
+baseurl: ""
+
+markdown: kramdown
+
+# Keep it minimal for GitHub Pages
+plugins: []
+
+# Optional: reduce build noise
+exclude:
+  - README.md
+  - .gitignore

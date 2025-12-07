@@ -1,0 +1,33 @@
+items:
+  - title: "CP31 Ticket Snatcher"
+    logo: "/images/logos/cp31.png"
+    keywords: ["Python", "Automation", "Web Interaction"]
+    teaser: "An automation toolkit designed to improve the success rate of convention ticket purchasing under heavy competition."
+    details: |
+      Built for real-world ticketing bottlenecks such as queue congestion and rapid sell-out scenarios.
+      Designed with practical usability in mind for anime convention communities.
+      (You can add technical highlights here later: browser automation stack, anti-bot strategy handling, etc.)
+    link: "https://github.com/xi-xiaoran/CP31-ticket-grabbing"
+    github_repo: "xi-xiaoran/CP31-ticket-grabbing"
+
+  - title: "Evidential U-KAN"
+    logo: "/images/logos/medical_ai.png"
+    keywords: ["Medical Imaging", "Segmentation", "EDL", "Uncertainty"]
+    teaser: "A trustworthy medical segmentation framework integrating progressive uncertainty-guided attention and semantic-preserving evidence learning."
+    details: |
+      Combines PEUA and SAEL to enhance boundary precision and preserve clinically meaningful semantics.
+      Demonstrates strong accuracy–reliability trade-offs across multiple public polyp datasets.
+      Serves as the codebase accompanying the arXiv preprint.
+    link: "https://github.com/xi-xiaoran/Evidential-U-KAN"
+    github_repo: "xi-xiaoran/Evidential-U-KAN"
+
+  - title: "Meta-Policy Controller (MPC)"
+    logo: "/images/logos/rl_edl.png"
+    keywords: ["Reinforcement Learning", "Meta-Learning", "Calibration", "EDL"]
+    teaser: "A bi-level meta-policy system that learns dynamic uncertainty calibration strategies for evidential models."
+    details: |
+      Uses a policy network to optimize KL coefficients and class-wise Dirichlet prior strengths.
+      Aims to unify accuracy and uncertainty quality under a single adaptive optimization framework.
+      Serves as the codebase accompanying the arXiv/CVPR under-review manuscript.
+    link: "https://github.com/xi-xiaoran/Meta-Policy-Controller"
+    github_repo: "xi-xiaoran/Meta-Policy-Controller"
