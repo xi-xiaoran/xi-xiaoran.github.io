@@ -200,39 +200,36 @@
   </div>
 </section>
 
-<div class="fun-card" id="random-anime-buddy">
-  <h3>Random Anime Buddy</h3>
-  <p class="fun-hint">A tiny gacha that refreshes your mood. New buddy on every reload.</p>
+<section id="fun-stats" class="home-section">
+  <h2>Fun Stuff</h2>
 
-  <div class="anime-buddy">
-    <div class="anime-buddy__img-wrap" id="anime-buddy-wrap">
-      <img id="anime-buddy-img" alt="Random anime character" loading="lazy" />
-      <span id="anime-buddy-rarity" class="rarity-badge">R</span>
-    </div>
+  <div class="fun-card" id="random-anime-buddy">
+    <h3>Random Anime Buddy</h3>
+    <p class="fun-hint">A tiny gacha that refreshes your mood. New buddy on every reload.</p>
 
-    <div class="anime-buddy__text">
-      <p id="anime-buddy-quote" class="anime-buddy__quote">Loading...</p>
-      <p id="anime-buddy-meta" class="anime-buddy__meta"></p>
-      <p id="anime-buddy-credit" class="anime-buddy__credit"></p>
+    <div class="anime-buddy">
+      <div class="anime-buddy__img-wrap" id="anime-buddy-wrap">
+        <img id="anime-buddy-img" alt="Random anime character" loading="lazy" />
+        <span id="anime-buddy-rarity" class="rarity-badge">R</span>
+      </div>
 
-      <p id="anime-buddy-celebrate" class="anime-buddy__celebrate" hidden></p>
+      <div class="anime-buddy__text">
+        <p id="anime-buddy-quote" class="anime-buddy__quote">Loading...</p>
+        <p id="anime-buddy-meta" class="anime-buddy__meta"></p>
+        <p id="anime-buddy-credit" class="anime-buddy__credit"></p>
 
-      <button id="anime-buddy-refresh" class="anime-buddy__btn" type="button">
-        Another roll
-      </button>
+        <p id="anime-buddy-celebrate" class="anime-buddy__celebrate" hidden></p>
 
-      <p id="anime-buddy-rates" class="anime-buddy__rates"></p>
+        <button id="anime-buddy-refresh" class="anime-buddy__btn" type="button">
+          Another roll
+        </button>
+
+        <p id="anime-buddy-rates" class="anime-buddy__rates"></p>
+      </div>
     </div>
   </div>
+</section>
 
-  <script defer src="{{ '/assets/js/anime-buddy.js' | relative_url }}"></script>
-</div>
-
-</div>
-
+<!-- Load scripts ONCE -->
 <script defer src="{{ '/assets/js/anime-buddy.js' | relative_url }}"></script>
-
-
-
-
-<script src="{{ '/assets/js/github-stars.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/github-stars.js' | relative_url }}"></script>
