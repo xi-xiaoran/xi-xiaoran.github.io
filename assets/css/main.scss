@@ -264,6 +264,121 @@ a:hover { text-decoration: underline; }
   }
 }
 
+/* Random Anime Buddy (full pack) */
+.anime-buddy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.anime-buddy__img-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Image size (non-cropping poster style) */
+#anime-buddy-img {
+  width: 120px;
+  height: 160px;
+  flex: 0 0 120px;
+  max-width: 120px;
+  border-radius: 14px;
+  object-fit: contain;   /* full visible */
+  background: rgba(0,0,0,0.04);
+  display: block;
+
+  border: 2px solid rgba(0,0,0,0.10); /* base border */
+}
+
+/* Text area */
+.anime-buddy__text {
+  min-width: 220px;
+  flex: 1;
+}
+
+.anime-buddy__quote {
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem 0;
+}
+
+.anime-buddy__meta,
+.anime-buddy__credit {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 0.1rem 0;
+}
+
+.anime-buddy__btn {
+  margin-top: 0.6rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Rarity badge */
+.rarity-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  font-size: 0.72rem;
+  padding: 0.12rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+/* R / SR / SSR borders */
+.rarity-r #anime-buddy-img {
+  border-color: rgba(0,0,0,0.12);
+}
+
+.rarity-sr #anime-buddy-img {
+  border-color: rgba(0,0,0,0.28);
+}
+
+.rarity-ssr #anime-buddy-img {
+  border-color: rgba(0,0,0,0.55);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+/* Badge subtle emphasis */
+.rarity-sr .rarity-badge {
+  background: rgba(0,0,0,0.85);
+}
+
+.rarity-ssr .rarity-badge {
+  background: #111;
+}
+
+/* SSR celebration line */
+.anime-buddy__celebrate {
+  margin: 0.35rem 0 0.2rem 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+/* Probability footer */
+.anime-buddy__rates {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+  opacity: 0.65;
+}
+
+/* Small screens */
+@media (max-width: 520px) {
+  #anime-buddy-img {
+    width: 96px;
+    height: 128px;
+    flex: 0 0 96px;
+    max-width: 96px;
+  }
+}
+
+
 /* Mobile nav */
 @media (max-width: 860px) {
   .site-header__inner {
