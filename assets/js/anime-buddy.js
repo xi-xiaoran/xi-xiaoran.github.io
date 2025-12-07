@@ -20,7 +20,7 @@ function pick(arr) {
 
 async function fetchImage() {
   const category = pick(IMAGE_CATEGORIES);
-  const res = await fetch(`${NEKOS_BASE}/${category}?amount=1`);
+  const res = await fetch(`${NEKOS_BASE}/${category}?amount=1`, { cache: "no-store" });
   if (!res.ok) throw new Error("Image API error");
   const data = await res.json();
   const item = data.results?.[0];
@@ -35,7 +35,7 @@ async function fetchImage() {
 }
 
 async function fetchQuote() {
-  const res = await fetch(ANIMECHAN_RANDOM);
+  const res = await fetch(ANIMECHAN_RANDOM, { cache: "no-store" });
   if (!res.ok) throw new Error("Quote API error");
   const data = await res.json();
 
@@ -49,6 +49,17 @@ async function fetchQuote() {
   return { content, anime: animeName, character: characterName };
 }
 
+function setImageSrc(imgEl, url) {
+  if (!imgEl) return;
+  if (!url) {
+    imgEl.removeAttribute("src");
+    return;
+  }
+  const sep = url.includes("?") ? "&" : "?";
+  imgEl.src = `${url}${sep}t=${Date.now()}`;
+}
+
+
 function render(image, quote) {
   const imgEl = document.getElementById("anime-buddy-img");
   const quoteEl = document.getElementById("anime-buddy-quote");
@@ -56,9 +67,10 @@ function render(image, quote) {
   const creditEl = document.getElementById("anime-buddy-credit");
 
   if (imgEl) {
-    imgEl.src = image.url;
-    imgEl.dataset.category = image.category;
+  setImageSrc(imgEl, image.url);
+  imgEl.dataset.category = image.category;
   }
+
 
   if (quoteEl) quoteEl.textContent = `“${quote.content}”`;
 
