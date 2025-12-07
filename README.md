@@ -16,6 +16,8 @@ This template is designed to be **easy to maintain**: you mostly edit YAML data 
 
 ## Preview
 
+![preview](images/preview.png)
+
 - Live demo: https://xi-xiaoran.github.io
 
 ---
