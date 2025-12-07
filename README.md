@@ -1,5 +1,11 @@
 # Lightweight Academic + Industry Personal Homepage (Jekyll, YAML-driven)
 
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-ready-black)
+![Jekyll](https://img.shields.io/badge/Jekyll-supported-CC0000)
+![YAML-driven](https://img.shields.io/badge/Content-YAML--driven-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+![Minimal](https://img.shields.io/badge/Style-Minimal-lightgrey)
+
 A clean, minimal, and highly editable GitHub Pages personal homepage template for:
 
 - Academic experience  
@@ -11,6 +17,29 @@ A clean, minimal, and highly editable GitHub Pages personal homepage template fo
 - A tasteful “Random Anime Buddy” gacha easter egg (R/SR/SSR)
 
 This template is designed to be **easy to maintain**: you mostly edit YAML data files and drop logos/figures into folders.
+
+---
+
+## Quickstart (60 seconds)
+
+1) **Use this template** on GitHub.  
+2) Rename the repo to: `YOUR_USERNAME.github.io`  
+3) Edit `_config.yml`:
+   - `title`
+   - `description`
+4) Replace your avatar:
+   - `images/avatar.jpg` (or update the path in `_includes/custom-home.html`)
+5) Update content by editing YAML:
+   - `_data/home_academic.yml`
+   - `_data/home_industry.yml`
+   - `_data/home_publications.yml`
+   - `_data/home_projects.yml`
+   - `_data/home_life.yml`
+   - `_data/home_cv.yml`
+6) Push → GitHub Pages will build automatically.
+
+Your site should be live at:
+- `https://YOUR_USERNAME.github.io`
 
 ---
 
@@ -45,32 +74,6 @@ This template is designed to be **easy to maintain**: you mostly edit YAML data 
 
 ---
 
-## Quick Start
-
-### Use this template
-1. Click **Use this template** on GitHub.
-2. Name your repo: `YOUR_USERNAME.github.io`
-3. Set it to Public.
-4. Push your edits.
-
-### Or fork
-1. Fork this repo.
-2. Rename it to `YOUR_USERNAME.github.io`.
-
----
-
-## Deploy on GitHub Pages
-
-1. **Settings → Pages**
-2. **Source**: Deploy from a branch  
-3. **Branch**: `main`  
-4. **Folder**: `/(root)`
-
-Your site will be available at:
-- `https://YOUR_USERNAME.github.io`
-
----
-
 ## Project Structure
 
 ```
@@ -98,7 +101,8 @@ Your site will be available at:
 ├─ images/
 │  ├─ avatar.jpg (or .png/.JPG)
 │  ├─ logos/
-│  └─ papers/
+│  ├─ papers/
+│  └─ preview.png
 └─ files/
    ├─ CV_English.pdf
    └─ CV_Chinese.pdf
@@ -116,23 +120,6 @@ Your site will be available at:
 ```
 
 Otherwise GitHub Pages will not compile SCSS into `main.css`, and your site may appear unstyled.
-
----
-
-## Customize Your Identity
-
-Edit `_config.yml`:
-
-```yml
-title: "Your Name"
-description: "One-line tagline about your research/engineering focus."
-```
-
-Place your avatar at:
-
-```
-/images/avatar.jpg
-```
 
 ---
 
@@ -210,6 +197,8 @@ chinese:
 
 ## Random Anime Buddy
 
+This easter egg uses public SFW image + quote APIs and includes local fallback quotes.
+
 Rarity probabilities are defined in:
 
 ```js
@@ -226,7 +215,7 @@ Adjust as you like as long as they sum to 1.0.
 
 ## License
 
-Add a `LICENSE` file (MIT is common for templates).
+MIT
 
 ---
 
