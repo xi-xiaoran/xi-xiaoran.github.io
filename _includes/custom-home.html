@@ -205,17 +205,25 @@
   <p class="fun-hint">A tiny gacha that refreshes your mood. New buddy on every reload.</p>
 
   <div class="anime-buddy">
+  <div class="anime-buddy__img-wrap" id="anime-buddy-wrap">
     <img id="anime-buddy-img" alt="Random anime character" loading="lazy" />
-    <div class="anime-buddy__text">
-      <p id="anime-buddy-quote" class="anime-buddy__quote">Loading...</p>
-      <p id="anime-buddy-meta" class="anime-buddy__meta"></p>
-      <p id="anime-buddy-credit" class="anime-buddy__credit"></p>
-
-      <button id="anime-buddy-refresh" class="anime-buddy__btn" type="button">
-        Another roll
-      </button>
-    </div>
+    <span id="anime-buddy-rarity" class="rarity-badge">R</span>
   </div>
+
+  <div class="anime-buddy__text">
+    <p id="anime-buddy-quote" class="anime-buddy__quote">Loading...</p>
+    <p id="anime-buddy-meta" class="anime-buddy__meta"></p>
+    <p id="anime-buddy-credit" class="anime-buddy__credit"></p>
+
+    <p id="anime-buddy-celebrate" class="anime-buddy__celebrate" hidden></p>
+
+    <button id="anime-buddy-refresh" class="anime-buddy__btn" type="button">
+      Another roll
+    </button>
+
+    <p id="anime-buddy-rates" class="anime-buddy__rates"></p>
+  </div>
+</div>
 </div>
 
 <script defer src="{{ '/assets/js/anime-buddy.js' | relative_url }}"></script>

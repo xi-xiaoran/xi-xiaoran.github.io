@@ -215,11 +215,12 @@ a:hover { text-decoration: underline; }
 
 #anime-buddy-img {
   width: 120px;
-  height: 120px;
+  height: 160px;         /* 海报比例，不像头像那么容易裁 */
   flex: 0 0 120px;
   max-width: 120px;
   border-radius: 14px;
-  object-fit: cover;
+  object-fit: contain;   /* 关键：不裁切，完整显示 */
+  background: rgba(0,0,0,0.04);
   display: block;
 }
 
