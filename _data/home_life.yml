@@ -1,4 +1,9 @@
 items:
+  - date: "2025-12-17"
+    title: "Offer received: MSc Data Science (Computer Science Data Informatics)"
+    logo: "/images/logos/manchester.jpg"
+    summary: "Received an offer for MSc Data Science (Computer Science Data Informatics) at the University of Manchester (2026 intake)."
+  
   - date: "2025-12-05"
     title: "Offer Received: University of Manchester"
     logo: "/images/logos/manchester.jpg"
