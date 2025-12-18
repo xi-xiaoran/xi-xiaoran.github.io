@@ -21,6 +21,26 @@
 
 <hr class="divider"/>
 
+<section id="latest-cv" class="home-section">
+<h2>Latest CV</h2>
+
+{% assign cv = site.data.home_cv %}
+
+<div class="cv-links">
+  <div class="cv-link-item">
+    <a href="{{ cv.english.file | relative_url }}">{{ cv.english.label }}</a>
+    <span class="cv-updated">Last updated: {{ cv.english.updated }}</span>
+  </div>
+
+  <div class="cv-link-item">
+    <a href="{{ cv.chinese.file | relative_url }}">{{ cv.chinese.label }}</a>
+    <span class="cv-updated">Last updated: {{ cv.chinese.updated }}</span>
+  </div>
+</div>
+</section>
+<hr class="divider"/>
+
+
 <section id="academic-experience" class="home-section">
   <h2>Academic Experience</h2>
   {% for x in site.data.home_academic.items %}
@@ -182,23 +202,6 @@
   {% endfor %}
 </section>
 
-<section id="latest-cv" class="home-section">
-  <h2>Latest CV</h2>
-
-  {% assign cv = site.data.home_cv %}
-
-  <div class="cv-links">
-    <div class="cv-link-item">
-      <a href="{{ cv.english.file | relative_url }}">{{ cv.english.label }}</a>
-      <span class="cv-updated">Last updated: {{ cv.english.updated }}</span>
-    </div>
-
-    <div class="cv-link-item">
-      <a href="{{ cv.chinese.file | relative_url }}">{{ cv.chinese.label }}</a>
-      <span class="cv-updated">Last updated: {{ cv.chinese.updated }}</span>
-    </div>
-  </div>
-</section>
 
 <section id="fun-stats" class="home-section">
   <h2>Fun Stuff</h2>
