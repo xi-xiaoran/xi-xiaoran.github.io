@@ -104,7 +104,7 @@
             <h3>{{ x.institution }}</h3>
             <div class="sub">
               {{ x.school_unit }} · {{ x.program }}
-              {% if x.advisor %}<br/>Advisor: {{ x.advisor }}{% endif %}
+              {% if x.advisor and x.advisor != "" %}<br/>Advisor: {{ x.advisor }}{% endif %}
             </div>
             {% if x.highlights %}
               <ul>

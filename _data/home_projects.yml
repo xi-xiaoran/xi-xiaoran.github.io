@@ -8,11 +8,8 @@ items:
   teaser: An automation toolkit designed to improve the success rate of convention ticket purchasing under heavy competition.
   details: 'Built for real-world ticketing bottlenecks such as queue congestion and rapid sell-out scenarios.
 
-    Designed with practical usability in mind for anime convention communities.
 
-    (You can add technical highlights here later: browser automation stack, anti-bot strategy handling, etc.)
-
-    '
+    Designed as a practical automation toolkit for anime convention ticket purchasing under extreme contention.'
   link: https://github.com/xi-xiaoran/CP31-ticket-grabbing
   github_repo: xi-xiaoran/CP31-ticket-grabbing
 - title: BUTR
