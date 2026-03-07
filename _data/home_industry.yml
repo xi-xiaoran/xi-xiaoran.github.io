@@ -33,17 +33,35 @@ items:
   company_logo: /images/logos/honor_clean.png
   role: Algorithm Intern
   location: Nanjing, Jiangsu, China
-  summary: Worked on Generative Engine Optimization (GEO) for flagship products, bridging
-    LLM-driven content strategy and measurable visibility.
+  summary: Built Generative Engine Optimization (GEO) strategy and evaluation infrastructure
+    for HONOR 400 and Magic V5, connecting LLM-driven content generation with measurable
+    gains in recommendation and citation visibility.
   bullets:
-  - Pushed 67 GEO articles across 13 media channels; achieved >70% AI visibility for
-    14 core prompts within 6 hours.
-  - Modeled AI-engine search/recommendation as a two-stage content–user query matching
-    system to reverse-engineer feature priorities.
-  - Built an end-to-end Python automation pipeline with a reflection–iteration mechanism;
-    reduced generation time by ~40%.
-  - Fine-tuned a DeepSeek-8B model with LoRA and contrastive learning to simulate
-    search behavior for literature relevance evaluation.
+  - Owned GEO strategy deployment and experiment-platform construction for HONOR 400
+    and Magic V5. Abstracted LLM web-search behavior (e.g., DeepSeek) into a two-stage
+    pipeline—candidate retrieval and re-ranking—and analyzed the key drivers behind
+    citation and recommendation using BM25, semantic similarity, and related signals.
+  - 'Proposed and independently implemented a Multi-Agent Consistency Controller:
+    a generation agent drafted promotional copy, while a review agent automatically
+    detected factual errors and exaggerated claims, returned structured feedback,
+    and enabled multi-round self-correction to reduce hallucination and compliance
+    risk while preserving factual consistency and brand tone at scale.'
+  - Designed a GAN-like three-stage workflow spanning generation, adversarial posterior
+    evaluation, and prior scoring. Built a multi-agent system for large-scale copy
+    generation; wrote headless-browser scripts to query LLMs, collect Top-50 reference
+    lists, and track Top-10 citation coverage and Top-50 candidate coverage; and constructed
+    a query–document dataset with LLM Top-5 candidates as positives and traditional
+    SEO documents as negatives.
+  - Fine-tuned DeepSeek-8B with LoRA to learn a scoring function for LLM citation
+    probability. In offline evaluation, the model achieved AUC ≈ 0.88 for predicting
+    whether a document would be used as a high-weight reference, Top-5 hit rate above
+    80%, and Spearman correlation of ~0.7 between prior scores and real online exposure.
+  - Using unified prior and posterior metrics to iteratively refine generation and
+    content-selection strategies, increased the share of HONOR 400 / Magic V5 content
+    proactively recommended or cited by LLMs by ~3× (key-query recommendation rate
+    from ~20% to 70%+), maintained overall visibility above 65%, reduced weekly publication
+    volume from ~100 pieces to 5–6, and translated the efficiency gain into roughly
+    RMB 4 million in annual marketing cost savings.
 - start: Jul 2024
   end: Dec 2024
   company: Bosch
