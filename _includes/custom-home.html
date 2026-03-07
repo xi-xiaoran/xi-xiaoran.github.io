@@ -1,4 +1,5 @@
 {% assign primary_edu = site.data.home_academic.items | first %}
+{% assign cv = site.data.home_cv %}
 
 <div class="home-layout">
   <aside class="profile-sidebar">
@@ -12,47 +13,83 @@
       <p class="profile-school">{{ primary_edu.institution }}</p>
       <p class="profile-bio">{{ site.description }}</p>
 
-      <div class="profile-meta">
-        <div class="profile-meta__item">
-          <span class="profile-meta__label">Location</span>
-          <span>China</span>
+      <div class="profile-contact-list">
+        <div class="profile-contact-item">
+          <span class="profile-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 4.5-5 10-8 12-3-2-8-7.5-8-12a8 8 0 1 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+          <div>
+            <div class="profile-contact-label">Location</div>
+            <div class="profile-contact-value">China</div>
+          </div>
         </div>
-        <div class="profile-meta__item">
-          <span class="profile-meta__label">Email</span>
-          <a href="mailto:2646594598@qq.com">2646594598@qq.com</a>
+
+        <div class="profile-contact-item">
+          <span class="profile-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m4 7 8 6 8-6"></path>
+            </svg>
+          </span>
+          <div>
+            <div class="profile-contact-label">Email</div>
+            <div class="profile-contact-value"><a href="mailto:2646594598@qq.com">2646594598@qq.com</a></div>
+          </div>
         </div>
-        <div class="profile-meta__item">
-          <span class="profile-meta__label">GitHub</span>
-          <a href="https://github.com/xi-xiaoran">github.com/xi-xiaoran</a>
+
+        <div class="profile-contact-item">
+          <span class="profile-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.92.57.11.78-.24.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.71.08-.69.08-.69 1.16.08 1.77 1.19 1.77 1.19 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.71 0-1.26.45-2.3 1.19-3.11-.12-.29-.51-1.46.11-3.05 0 0 .98-.31 3.2 1.19A11.1 11.1 0 0 1 12 6.1c.98 0 1.97.13 2.89.38 2.21-1.5 3.19-1.19 3.19-1.19.63 1.59.24 2.76.12 3.05.74.81 1.19 1.85 1.19 3.11 0 4.44-2.69 5.42-5.26 5.7.41.36.78 1.08.78 2.19 0 1.58-.01 2.85-.01 3.24 0 .31.2.67.79.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path>
+            </svg>
+          </span>
+          <div>
+            <div class="profile-contact-label">GitHub</div>
+            <div class="profile-contact-value"><a href="https://github.com/xi-xiaoran">github.com/xi-xiaoran</a></div>
+          </div>
         </div>
       </div>
 
-      <div class="profile-actions">
-        <a class="profile-button" href="{{ '/files/CV_English.pdf' | relative_url }}">English CV</a>
-        <a class="profile-button" href="{{ '/files/CV_Chinese.pdf' | relative_url }}">中文简历</a>
+      <div class="profile-link-group">
+        <a class="profile-link-card" href="{{ cv.english.file | relative_url }}">
+          <span class="profile-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path>
+              <path d="M14 2v5h5"></path>
+              <path d="M9 13h6"></path>
+              <path d="M9 17h6"></path>
+              <path d="M9 9h1"></path>
+            </svg>
+          </span>
+          <span>
+            <span class="profile-link-title">English CV</span>
+            <span class="profile-link-sub">Updated {{ cv.english.updated }}</span>
+          </span>
+        </a>
+
+        <a class="profile-link-card" href="{{ cv.chinese.file | relative_url }}">
+          <span class="profile-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path>
+              <path d="M14 2v5h5"></path>
+              <path d="M9 13h6"></path>
+              <path d="M9 17h6"></path>
+              <path d="M9 9h1"></path>
+            </svg>
+          </span>
+          <span>
+            <span class="profile-link-title">中文简历</span>
+            <span class="profile-link-sub">Updated {{ cv.chinese.updated }}</span>
+          </span>
+        </a>
       </div>
     </div>
   </aside>
 
   <div class="home-content">
-    <section id="latest-cv" class="home-section">
-      <h2>Latest CV</h2>
-
-      {% assign cv = site.data.home_cv %}
-
-      <div class="cv-links">
-        <div class="cv-link-item">
-          <a href="{{ cv.english.file | relative_url }}">{{ cv.english.label }}</a>
-          <span class="cv-updated">Last updated: {{ cv.english.updated }}</span>
-        </div>
-
-        <div class="cv-link-item">
-          <a href="{{ cv.chinese.file | relative_url }}">{{ cv.chinese.label }}</a>
-          <span class="cv-updated">Last updated: {{ cv.chinese.updated }}</span>
-        </div>
-      </div>
-    </section>
-
     <section id="academic-experience" class="home-section">
       <h2>Academic Experience</h2>
       {% for x in site.data.home_academic.items %}
@@ -246,6 +283,5 @@
   </div>
 </div>
 
-<!-- Load scripts ONCE -->
 <script defer src="{{ '/assets/js/anime-buddy.js' | relative_url }}"></script>
 <script defer src="{{ '/assets/js/github-stars.js' | relative_url }}"></script>
