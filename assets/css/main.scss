@@ -179,64 +179,29 @@ a:hover { text-decoration: underline; }
   opacity: 0.85;
 }
 
-
-
-/* Academic crests */
-#academic-experience .card {
-  grid-template-columns: 92px 1fr;
-}
-
-#academic-experience .card__logo {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-#academic-experience .card__logo img {
-  width: 76px;
-  height: 76px;
-  object-fit: contain;
-  border-radius: 0;
-  background: transparent;
-  padding: 0;
-  border: none;
-}
-
-/* Wider company / life-update logos */
+/* Unified large media layout for section cards */
+#academic-experience .card,
 #industry-experience .card,
-#life-updates .card {
-  grid-template-columns: 108px 1fr;
-}
-
-#industry-experience .card__logo,
-#life-updates .card__logo {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-#industry-experience .card__logo img,
-#life-updates .card__logo img {
-  width: 96px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 12px;
-  background: #fff;
-  padding: 6px;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-
-/* Publication cards */
+#projects .card,
+#life-updates .card,
 .card--paper {
   grid-template-columns: 312px 1fr;
 }
 
+#academic-experience .card__logo,
+#industry-experience .card__logo,
+#projects .card__logo,
+#life-updates .card__logo,
 .card--paper .card__logo {
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
+#academic-experience .card__logo img,
+#industry-experience .card__logo img,
+#projects .card__logo img,
+#life-updates .card__logo img,
 .card--paper .card__logo img {
   width: 296px;
   height: 166px;
@@ -248,14 +213,33 @@ a:hover { text-decoration: underline; }
 }
 
 @media (max-width: 640px) {
+  #academic-experience .card,
+  #industry-experience .card,
+  #projects .card,
+  #life-updates .card,
   .card--paper {
     grid-template-columns: 1fr;
   }
 
+  #academic-experience .card__logo,
+  #industry-experience .card__logo,
+  #projects .card__logo,
+  #life-updates .card__logo,
   .card--paper .card__logo {
     justify-content: flex-start;
   }
+
+  #academic-experience .card__logo img,
+  #industry-experience .card__logo img,
+  #projects .card__logo img,
+  #life-updates .card__logo img,
+  .card--paper .card__logo img {
+    width: min(100%, 296px);
+    height: auto;
+    aspect-ratio: 296 / 166;
+  }
 }
+
 
 
 /* CV section */
