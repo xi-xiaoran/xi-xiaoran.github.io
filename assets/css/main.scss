@@ -179,6 +179,69 @@ a:hover { text-decoration: underline; }
   opacity: 0.85;
 }
 
+
+
+/* Wider institution/company logos */
+#academic-experience .card,
+#industry-experience .card,
+#life-updates .card {
+  grid-template-columns: 108px 1fr;
+}
+
+#academic-experience .card__logo,
+#industry-experience .card__logo,
+#life-updates .card__logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#academic-experience .card__logo img,
+#industry-experience .card__logo img,
+#life-updates .card__logo img {
+  width: 96px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  padding: 6px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+
+
+/* Publication cards */
+.card--paper {
+  grid-template-columns: 172px 1fr;
+}
+
+.card--paper .card__logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card--paper .card__logo img {
+  width: 156px;
+  height: 92px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  padding: 6px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+@media (max-width: 640px) {
+  .card--paper {
+    grid-template-columns: 1fr;
+  }
+
+  .card--paper .card__logo {
+    justify-content: flex-start;
+  }
+}
+
+
 /* CV section */
 #latest-cv {
   padding-top: 0.5rem;
