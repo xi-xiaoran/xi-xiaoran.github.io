@@ -228,7 +228,7 @@ a:hover { text-decoration: underline; }
 
 /* Publication cards */
 .card--paper {
-  grid-template-columns: 236px 1fr;
+  grid-template-columns: 312px 1fr;
 }
 
 .card--paper .card__logo {
@@ -238,8 +238,8 @@ a:hover { text-decoration: underline; }
 }
 
 .card--paper .card__logo img {
-  width: 220px;
-  height: 132px;
+  width: 296px;
+  height: 166px;
   object-fit: contain;
   border-radius: 12px;
   background: #fff;
