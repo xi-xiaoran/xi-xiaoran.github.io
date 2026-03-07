@@ -181,14 +181,33 @@ a:hover { text-decoration: underline; }
 
 
 
-/* Wider institution/company logos */
-#academic-experience .card,
+/* Academic crests */
+#academic-experience .card {
+  grid-template-columns: 92px 1fr;
+}
+
+#academic-experience .card__logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#academic-experience .card__logo img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* Wider company / life-update logos */
 #industry-experience .card,
 #life-updates .card {
   grid-template-columns: 108px 1fr;
 }
 
-#academic-experience .card__logo,
 #industry-experience .card__logo,
 #life-updates .card__logo {
   display: flex;
@@ -196,7 +215,6 @@ a:hover { text-decoration: underline; }
   justify-content: center;
 }
 
-#academic-experience .card__logo img,
 #industry-experience .card__logo img,
 #life-updates .card__logo img {
   width: 96px;
@@ -208,11 +226,9 @@ a:hover { text-decoration: underline; }
   border: 1px solid rgba(0,0,0,0.06);
 }
 
-
-
 /* Publication cards */
 .card--paper {
-  grid-template-columns: 172px 1fr;
+  grid-template-columns: 236px 1fr;
 }
 
 .card--paper .card__logo {
@@ -222,12 +238,12 @@ a:hover { text-decoration: underline; }
 }
 
 .card--paper .card__logo img {
-  width: 156px;
-  height: 92px;
+  width: 220px;
+  height: 132px;
   object-fit: contain;
   border-radius: 12px;
   background: #fff;
-  padding: 6px;
+  padding: 8px;
   border: 1px solid rgba(0,0,0,0.06);
 }
 
