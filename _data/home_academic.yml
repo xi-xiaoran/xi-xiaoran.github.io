@@ -26,12 +26,11 @@ items:
 - start: Aug 2026
   end: Incoming
   institution: Yale University
-  school_logo: /images/logos/yale_gsas.png
-  school_unit: Graduate School of Arts and Sciences / Yale School of Public Health
-  program: M.S. in Public Health (Biostatistics Data Science)
+  school_logo: /images/logos/yale_crest.png
+  school_unit: Yale School of Public Health
+  program: M.S. in Public Health (Biostatistics - Data Science)
   advisor: ''
   location: New Haven, CT, USA
   highlights:
-  - Incoming full-time M.S. student in Public Health in Biostatistics Data Science,
-    starting in Fall 2026.
-  - Offer accepted; new-student enrollment begins on Aug 16, 2026.
+  - Incoming full-time M.S. student in Public Health with a Biostatistics - Data Science
+    focus, starting in Fall 2026.
