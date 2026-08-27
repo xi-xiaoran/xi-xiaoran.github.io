@@ -1,4 +1,5 @@
-{% assign primary_edu = site.data.home_academic.items | first %}
+{% assign yale_edu = site.data.home_academic.items | where: "institution", "Yale University" %}
+{% assign primary_edu = yale_edu | first %}
 {% assign cv = site.data.home_cv %}
 
 <div class="home-layout">
@@ -23,7 +24,7 @@
           </span>
           <div>
             <div class="profile-contact-label">Location</div>
-            <div class="profile-contact-value">China</div>
+            <div class="profile-contact-value">New Haven, CT, USA</div>
           </div>
         </div>
 
@@ -36,7 +37,11 @@
           </span>
           <div>
             <div class="profile-contact-label">Email</div>
-            <div class="profile-contact-value"><a href="mailto:2646594598@qq.com">2646594598@qq.com</a></div>
+            <div class="profile-contact-value">
+              <a href="mailto:zhen.yang.zy372@yale.edu">zhen.yang.zy372@yale.edu</a><br>
+              <a href="mailto:yz2646594598@gmail.com">yz2646594598@gmail.com</a><br>
+              <a href="mailto:2646594598@qq.com">2646594598@qq.com</a>
+            </div>
           </div>
         </div>
 
@@ -165,7 +170,7 @@
             {% endif %}
           </div>
           <div class="card__body">
-            <div class="meta">{{ p.venue }} · {{ p.year }}</div>
+            <div class="meta">{% if p.venue and p.venue != "" %}{{ p.venue }} · {% endif %}{{ p.year }}</div>
             <h3>{{ p.title }}</h3>
             <div class="sub">{{ p.authors }}</div>
 
@@ -205,7 +210,11 @@
         <div class="card">
           <div class="card__logo">
             {% if pr.logo %}
-              <img src="{{ pr.logo | relative_url }}" alt="{{ pr.title }} logo">
+              {% if pr.logo contains '://' %}
+                <img src="{{ pr.logo }}" alt="{{ pr.title }} logo">
+              {% else %}
+                <img src="{{ pr.logo | relative_url }}" alt="{{ pr.title }} logo">
+              {% endif %}
             {% endif %}
           </div>
           <div class="card__body">

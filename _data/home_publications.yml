@@ -1,27 +1,89 @@
 items:
-- title: Post-hoc Budgeted Uncertainty-Guided Topology Repair for Retinal Vessel Segmentation
-  authors: Zhen Yang*, Wei Tang, Xinyi Zhang, Chu Chen, Xiaowen Ma, Kangning Cui (*independent first author)
-  figure: /images/papers/butr_teaser.png
-  venue: MICCAI 2026 (under review)
+- title: "K/V Restoration: A Training-Free Repair for Uncertainty-Behavior Drift in Quantized Language Models"
+  authors: Zhen Yang, Sizai Hou, Rui-Feng Wang, Daniel Coyne, Chu Chen, Wei Tang, Yixuan Chen, Fan Yang, Kangning Cui
+  figure: /images/papers/kvr_teaser.png
   year: '2026'
   keywords:
-  - Retinal Vessel Segmentation
-  - Topology Repair
+  - LLM Quantization
+  - Behavioral Fidelity
+  - Uncertainty Drift
+  - Mixed-Precision Repair
+  - Attention
+  teaser: A training-free mixed-precision repair that restores only K/V projections to reduce quantization-induced uncertainty-behavior drift while keeping the remaining backbone quantized.
+  abstract: |-
+    Weight-only post-training quantization is commonly evaluated by accuracy or perplexity, yet similar aggregate performance can conceal changes in candidate distributions, confidence, and decisions relative to the full-precision model. We study this uncertainty-behavior drift through a diagnosis-to-repair analysis. Realized attention-relation mismatch provides a complementary diagnostic for candidate-distribution drift, and an attention-output intervention localizes repair potential to the attention path. Component-level interventions then identify the key and value (K/V) projections as the dominant tested local target within this path. We propose K/V Restoration, a training-free mixed-precision repair that restores only the key and value projections while leaving the remaining backbone quantized. KVR-Soft interpolates quantized and higher-precision K/V states, whereas KVR-Hard directly replaces the quantized K/V projections; neither requires a full-precision forward pass at inference. Across ten GPTQ-quantized models and nine candidate-scoring benchmarks, both variants reduce candidate-distribution divergence and prediction flips by about 16% and 11% relative to the matched GPTQ backbone on the three main benchmarks, with comparable accuracy. The gains persist across six calibration bases, improve selective-prediction fidelity, and are not reproduced by controls under the same K/V budget cap. These results support behavioral fidelity as a compression objective beyond accuracy and identify targeted K/V restoration as a practical repair.
+  paper_link: ''
+  code_link: ''
+
+- title: "Accuracy Is Not Fidelity: Decision Churn in Low-Rank Compressed Language Models"
+  authors: Zhen Yang, Wei Tang, Chu Chen, Jeonseong Kim, Sizai Hou, Yinhao Wu, Jack Perry, Liang He, Yixuan Chen, Fan Yang, Kangning Cui
+  figure: /images/papers/decision_churn_teaser.png
+  year: '2026'
+  keywords:
+  - LLM Compression
+  - Low-Rank Compression
+  - Decision Fidelity
+  - Prediction Churn
+  - Model Auditing
+  teaser: A large-scale audit showing that similar aggregate accuracy can conceal substantial per-example decision churn in low-rank compressed language models.
+  abstract: |-
+    Low-rank compression of large language models is typically evaluated using perplexity, aggregate accuracy, and matrix reconstruction error. These metrics do not determine whether a compressed model preserves the per-example decisions of its dense source, a property we call dense-reference decision fidelity. We audit 235 compressed checkpoints spanning 6 dense sources, 14 low-rank method variants, and 7 candidate-scoring tasks, measuring prediction flips and hidden churn, defined as the flip rate minus the absolute change in aggregate accuracy. Across the suite, compressed accuracy decreases by 19.07 percentage points on average, while 39.22% of selected answers change and HiddenChurn averages 20.15%. Among 216 cross-method checkpoint pairs sharing the same dense source and matched within 0.5 percentage points in absolute accuracy change, prediction-flip rates differ by 2.27 percentage points on average and by up to 6.97 points. Across the five release-defined keep labels, mean PredFlip and HiddenChurn decline but remain substantial at 0.8: 27.40% of predictions flip and HiddenChurn remains 15.57%. A local first-order analysis shows that reconstruction magnitude alone does not determine decision-sensitive error; the effect depends on residual alignment with score-gap sensitivities and the dense margin. We introduce the boundary-amplification ratio (BAR), a post-hoc measure of the largest competitor-relative score shift divided by the dense margin. For a unique dense winner, BAR < 1 certifies prediction preservation. These findings support treating dense-reference decision fidelity as a distinct evaluation target alongside standard compression metrics.
+  paper_link: ''
+  code_link: ''
+
+- title: Target-Aware Calibration Data Selection for Preserving Uncertainty in Quantized Language Models
+  authors: Zhen Yang†, Sizai Hou†, Kaiwen Zheng, Yaofang Liu, Liang He, Yixuan Chen*, Kangning Cui* († equal contribution; * corresponding authors)
+  figure: /images/papers/dpq_teaser.png
+  venue: Findings of EMNLP 2026
+  year: '2026'
+  keywords:
+  - LLM Quantization
+  - Uncertainty Preservation
+  - Calibration Data Selection
+  - Post-Training Quantization
+  - Reliability
+  teaser: A target-aware calibration-data selection framework for preserving confidence, margins, and answerability behavior in quantized language models.
+  abstract: |-
+    Quantization is widely used to deploy large language models, but its effect on uncertainty behavior, such as confidence, margins, and abstention, is rarely treated as a primary objective. We frame calibration-data selection for quantization as a target-dependent uncertainty-preservation problem. Different deployments emphasize different regions of the input distribution, yet prior work mainly optimizes accuracy-oriented compression metrics or adjusts scores after quantization. We formalize this goal with distributional and boundary preservation risks, and provide a simple mixture-mismatch argument explaining why no single calibration recipe should be expected to fit all targets. We introduce Doubt-Preserving Quantization (DPQ), a lightweight pre-quantization recipe family that uses full-precision predictions to construct target-aligned calibration mixtures of high-doubt examples and generic anchors. Across 8 language models, 9 NLP benchmarks, and 22 comparison methods, the leading fixed recipe changes with the preservation target: DPQ-r75 leads on SQUAD2 answerability-boundary preservation, while milder or single-signal variants, including DPQ-r50, confidence-only, and entropy-only, better preserve broad multiple-choice QA behavior. These results show that calibration data should be selected for the specific full-precision score behavior a deployment needs to preserve, rather than treated as a fixed quantization detail. Code is available at https://github.com/xi-xiaoran/DPQ.
+  paper_link: https://arxiv.org/pdf/2608.21019
+  code_link: https://github.com/xi-xiaoran/DPQ
+
+- title: Risk-Aware Structural Repair for Topology-Sensitive Image Segmentation
+  authors: Zhen Yang, Wei Tang, Xinyi Zhang, Chu Chen, Rui-Feng Wang, Sizai Hou, Yixuan Chen, Kangning Cui
+  figure: /images/papers/rasr_teaser.png
+  year: '2026'
+  keywords:
+  - Topology-Sensitive Segmentation
+  - Structural Repair
   - Evidential Uncertainty
   - Post-hoc Refinement
-  - Medical Image Segmentation
-  teaser: A plug-and-play post-hoc repair framework that combines evidential uncertainty and topology-violation cues to perform budgeted local edits for structurally reliable retinal vessel segmentation.
+  - Medical & Remote Sensing
+  teaser: A lightweight post-hoc framework that combines evidential uncertainty and structural violations to localize and repair topology-sensitive segmentation errors within a risk-guided region of interest.
   abstract: |-
-    Accurate retinal vessel segmentation is critical for quantitative ophthalmic analysis, yet modern segmenters can still produce structurally invalid masks such as broken vessels, spurious fragments, and small holes.
-    We propose BUTR, a plug-and-play post-hoc framework that first constructs a compact region of interest by combining predictive uncertainty with explicit structure-violation signals under an edit budget, and then performs ROI-constrained logit refinement with a lightweight repair head.
-    This design enables minimal, localized intervention rather than uncontrolled global post-processing.
-    Experiments on DRIVE, CHASE_DB1, and STARE show that BUTR consistently improves topology-sensitive metrics while matching or improving standard overlap and boundary metrics.
+    Topology-sensitive segmentation masks can achieve high overlap yet contain disconnections, spurious components, or holes that compromise downstream analysis. Existing approaches commonly incorporate topological priors during training or refine predictions after segmentation, but localizing where corrections are needed remains challenging. We propose RASR, a Risk-Aware Structural Repair framework that freezes an evidentially trained backbone and localizes repair using two complementary signals: evidential uncertainty and structural violations. These signals define a risk-guided region of interest (ROI), where a shallow repair head applies gated residual logit updates while leaving predictions outside the ROI unchanged. Across five vessel and road benchmarks and four backbones, RASR improves overlap, boundary, and structural metrics with only 20.5K additional parameters. Ablations support the complementary roles of evidential uncertainty and structural violations, while cross-backbone experiments show partial transferability. Anonymous code is available at https://anonymous.4open.science/r/RASR-1BA0.
   paper_link: ''
-  code_link: https://github.com/xi-xiaoran/BUTR
-- title: Meta-Policy Controller for Dynamic Uncertainty Calibration in Evidential Deep Learning
+  code_link: https://github.com/xi-xiaoran/RASR
+
+- title: "EviE: Evidential Exploration for Value-Based Reinforcement Learning"
+  authors: Zhen Yang, Rui-Feng Wang, Wei Tang, Yinhao Wu, Xiaowen Ma, Sizai Hou, Yixuan Chen, Kangning Cui
+  figure: /images/papers/evie_teaser.png
+  year: '2026'
+  keywords:
+  - Reinforcement Learning
+  - Exploration
+  - Evidential Learning
+  - Dirichlet Vacuity
+  - Value-Based RL
+  teaser: A state-dependent exploration framework that uses evidential vacuity to allocate exploration where local value decisions remain unstable.
+  abstract: |-
+    Exploration in deep reinforcement learning (RL) is still often controlled by global heuristics such as ε-greedy or Boltzmann policies, which can over-explore familiar states while failing to sustain exploration where local decisions remain unstable. To address this, we propose Evidential Exploration (EviE), a value-based framework that uses Dirichlet vacuity as a state-dependent exploration signal. In tabular Markov decision processes (MDPs), EviE maintains additive action-wise evidence with a symmetric prior and uses the resulting vacuity to modulate a local ε-greedy policy. We prove that vacuity decays as 1/N(s) with state visitation, yielding a count-like exploration schedule that is greedy in the limit with infinite exploration and therefore preserves standard tabular Q-learning convergence guarantees. In deep RL, where explicit state counts are unavailable, we extend the same principle with a lightweight evidential head on top of a Deep Q-Network backbone and use its vacuity as a local exploration controller, without intrinsic bonuses or auxiliary exploration networks. Across tabular and deep benchmarks, EviE recovers the predicted inverse-count behavior, improves hard-exploration efficiency, and remains competitive on broader value-based RL tasks. We also provide preliminary evidence under the evaluated shifts.
+  paper_link: ''
+  code_link: ''
+
+- title: Bi-level Meta-Policy Control for Dynamic Uncertainty Calibration in Evidential Deep Learning
   authors: Zhen Yang*, Yansong Ma, Lei Chen (*independent first author)
   figure: /images/papers/mpc_teaser.png
-  venue: arXiv preprint; CVPR 2026 (under review)
+  venue: arXiv preprint
   year: '2025'
   keywords:
   - Reinforcement Learning
@@ -30,21 +92,14 @@ items:
   - Calibration
   teaser: A bi-level meta-policy framework that dynamically optimizes KL regularization and learnable Dirichlet priors for robust uncertainty calibration.
   abstract: |-
-    Traditional evidential deep learning methods rely on static hyperparameters for uncertainty calibration,
-    limiting adaptability under dynamic training states and shifting data distributions.
-    We propose the Meta-Policy Controller (MPC), a dynamic meta-learning framework that adjusts the KL divergence coefficient
-    and class-specific Dirichlet prior strengths through bi-level optimization.
-    In the inner loop, model parameters are updated with a dynamically configured loss function.
-    In the outer loop, a policy network learns to balance multi-objective rewards that consider both predictive accuracy
-    and uncertainty quality.
-    Unlike fixed uniform priors, our learnable Dirichlet prior flexibly adapts to class distributions and training dynamics.
-    Experiments show improved reliability and calibration across classification, medical segmentation, and OOD detection tasks.
+    Traditional Evidence Deep Learning (EDL) methods rely on static hyperparameter for uncertainty calibration, limiting their adaptability in dynamic data distributions, which results in poor calibration and generalization in high-risk decision-making tasks. To address this limitation, we propose the Meta-Policy Controller (MPC), a dynamic meta-learning framework that adjusts the KL divergence coefficient and Dirichlet prior strengths for optimal uncertainty modeling. Specifically, MPC employs a bi-level optimization approach: in the inner loop, model parameters are updated through a dynamically configured loss function that adapts to the current training state; in the outer loop, a policy network optimizes the KL divergence coefficient and class-specific Dirichlet prior strengths based on multi-objective rewards balancing prediction accuracy and uncertainty quality. Unlike previous methods with fixed priors, our learnable Dirichlet prior enables flexible adaptation to class distributions and training dynamics. Extensive experimental results show that MPC significantly enhances the reliability and calibration of model predictions across various tasks, improving uncertainty calibration, prediction accuracy, and performance retention after confidence-based sample rejection.
   paper_link: https://arxiv.org/abs/2510.08938
   code_link: https://github.com/xi-xiaoran/Meta-Policy-Controller
-- title: Evidential U-KAN for Trustworthy Medical Image Segmentation
+
+- title: Progressive Uncertainty-Guided Evidential U-KAN for Trustworthy Medical Image Segmentation
   authors: Zhen Yang*, Yansong Ma, Lei Chen (*independent first author)
   figure: /images/papers/evidential_ukan_teaser.png
-  venue: arXiv preprint; ECCV 2026 (under review)
+  venue: arXiv preprint
   year: '2025'
   keywords:
   - Medical Image Segmentation
@@ -52,13 +107,6 @@ items:
   - Uncertainty
   teaser: A progressive uncertainty-guided attention framework that strengthens boundary awareness and preserves semantic evidence for reliable medical segmentation.
   abstract: |-
-    Trustworthy medical image segmentation aims to deliver accurate and reliable results for clinical decision-making.
-    Most existing methods adopt the evidential deep learning (EDL) paradigm due to its computational efficiency and theoretical robustness.
-    However, EDL-based methods often neglect leveraging uncertainty maps rich in attention cues to refine ambiguous boundary segmentation.
-    To address this, we propose a progressive evidence uncertainty-guided attention (PEUA) mechanism to guide the model to focus on hard regions.
-    PEUA progressively refines attention using uncertainty maps while employing low-rank learning to denoise attention weights.
-    We further introduce a semantic-preserving evidence learning (SAEL) strategy that retains critical semantics through a semantic-smooth evidence generator and fidelity-enhancing regularization.
-    By embedding PEUA and SAEL into the state-of-the-art U-KAN, we propose Evidential U-KAN for trustworthy medical image segmentation.
-    Extensive experiments across four datasets demonstrate superior accuracy and reliability over competing methods.
+    Trustworthy medical image segmentation aims at deliver accurate and reliable results for clinical decision-making. Most existing methods adopt the evidence deep learning (EDL) paradigm due to its computational efficiency and theoretical robustness. However, the EDL-based methods often neglect leveraging uncertainty maps rich in attention cues to refine ambiguous boundary segmentation. To address this, we propose a progressive evidence uncertainty guided attention (PEUA) mechanism to guide the model to focus on the feature representation learning of hard regions. Unlike conventional approaches, PEUA progressively refines attention using uncertainty maps while employing low-rank learning to denoise attention weights, enhancing feature learning for challenging regions. Concurrently, standard EDL methods suppress evidence of incorrect class indiscriminately via Kullback-Leibler (KL) regularization, impairing the uncertainty assessment in ambiguous areas and consequently distorts the corresponding attention guidance. We thus introduce a semantic-preserving evidence learning (SAEL) strategy, integrating a semantic-smooth evidence generator and a fidelity-enhancing regularization term to retain critical semantics. Finally, by embedding PEUA and SAEL with the state-of-the-art U-KAN, we proposes Evidential U-KAN, a novel solution for trustworthy medical image segmentation. Extensive experiments on 4 datasets demonstrate superior accuracy and reliability over the competing methods. The code is available at github.
   paper_link: https://arxiv.org/abs/2510.08949
   code_link: https://github.com/xi-xiaoran/Evidential-U-KAN

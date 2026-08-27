@@ -1,4 +1,49 @@
 items:
+- title: Doubt-Preserving Quantization (DPQ)
+  logo: https://raw.githubusercontent.com/xi-xiaoran/DPQ/main/assets/squad2_ecdf_area_to_fp_bars.png
+  keywords:
+  - LLM Quantization
+  - Calibration Data Selection
+  - Uncertainty
+  - GPTQ / AWQ
+  teaser: A target-aware pre-quantization calibration-data selection framework for preserving full-precision uncertainty behavior without modifying the quantizer or adding inference-time overhead.
+  details: |-
+    Uses full-precision predictions to construct target-aligned calibration recipes from high-doubt or boundary-near examples and generic anchors.
+
+    The repository provides staged workflows for data preparation, calibration construction, GPTQ/AWQ quantization, evaluation, post-hoc checks, SQuAD2 distribution diagnostics, and reproducible summary generation.
+  link: https://github.com/xi-xiaoran/DPQ
+  github_repo: xi-xiaoran/DPQ
+
+- title: RASR
+  logo: https://raw.githubusercontent.com/xi-xiaoran/RASR/main/assets/pipeline.png
+  keywords:
+  - Topology-Sensitive Segmentation
+  - Structural Repair
+  - Evidential Uncertainty
+  - Medical & Remote Sensing
+  teaser: A lightweight post-hoc repair framework that combines evidential uncertainty and structural violations to localize and correct topology-sensitive segmentation errors.
+  details: |-
+    An evidential backbone produces probability and uncertainty maps, while a structural certificate identifies violation regions. RASR feeds `Concat[x, p(x), u(x), v(x)]` to a shallow repair head and applies gated residual updates only inside a budgeted ROI.
+
+    The repository includes UNet, Attention-UNet, UNet++, and Swin-UNet backbones; vessel and road benchmarks; ROI/gate, budget, transfer, and threshold ablations; and reproducible aggregation scripts.
+  link: https://github.com/xi-xiaoran/RASR
+  github_repo: xi-xiaoran/RASR
+
+- title: Bounded Review Simulation
+  logo: https://raw.githubusercontent.com/xi-xiaoran/bounded-review-simulation/main/assets/overview.png
+  keywords:
+  - Scientific Review
+  - Simulation
+  - AI-Assisted Science
+  - Review Capacity
+  teaser: A reproducible simulation artifact for studying when AI-assisted scientific production creates portfolio pressure under bounded review capacity and which controls change the boundary.
+  details: |-
+    Separates latent scientific quality from observed review scores and models fixed-budget author strategy families, heterogeneous author groups, shared review capacity, and accept/oral/best-paper-style quotas.
+
+    The artifact also includes reviewer-side overload, reliability heterogeneity, AI-assisted reviewing, assignment noise, strategic bidding, and governance/falsification controls, with quick, manuscript-scale, and full 50-seed reproduction workflows plus cached CSV and figure snapshots.
+  link: https://github.com/xi-xiaoran/bounded-review-simulation
+  github_repo: xi-xiaoran/bounded-review-simulation
+
 - title: CP31 Ticket Snatcher
   logo: /images/logos/cp31.png
   keywords:
@@ -12,17 +57,7 @@ items:
     Designed as a practical automation toolkit for anime convention ticket purchasing under extreme contention.'
   link: https://github.com/xi-xiaoran/CP31-ticket-grabbing
   github_repo: xi-xiaoran/CP31-ticket-grabbing
-- title: BUTR
-  logo: /images/papers/butr_teaser.png
-  keywords:
-  - Medical Imaging
-  - Retinal Vessel Segmentation
-  - Topology Repair
-  - Uncertainty
-  teaser: A plug-and-play post-hoc framework that combines evidential uncertainty and structure-violation cues for budgeted local repair in retinal vessel segmentation.
-  details: Constructs a compact ROI under an edit budget by fusing uncertainty with topology-violation signals, then applies lightweight ROI-constrained logit refinement for minimal and targeted structural correction. Serves as the codebase accompanying the MICCAI 2026 under-review manuscript.
-  link: https://github.com/xi-xiaoran/BUTR
-  github_repo: xi-xiaoran/BUTR
+
 - title: Meta-Policy Controller (MPC)
   logo: /images/logos/rl_edl.png
   keywords:
@@ -35,11 +70,12 @@ items:
 
     Aims to unify accuracy and uncertainty quality under a single adaptive optimization framework.
 
-    Serves as the codebase accompanying the arXiv/CVPR under-review manuscript.
+    Serves as the codebase accompanying the arXiv preprint.
 
     '
   link: https://github.com/xi-xiaoran/Meta-Policy-Controller
   github_repo: xi-xiaoran/Meta-Policy-Controller
+
 - title: Evidential U-KAN
   logo: /images/logos/medical_ai.png
   keywords:
