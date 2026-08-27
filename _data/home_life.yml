@@ -1,4 +1,8 @@
 items:
+- date: '2026-05-25'
+  title: Hearthstone Americas Top 5
+  logo: /images/life/hearthstone_rank5.jpg
+  summary: Reached Rank #5 on the Americas server leaderboard.
 - date: '2023-07-25'
   title: Mahjong Soul Rank-Up
   logo: /images/logos/mahjong_soul.png
