@@ -106,10 +106,24 @@ a:hover {
   position: sticky;
   top: 5.6rem;
   align-self: start;
+  max-height: calc(100vh - 6.6rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  padding-right: 0.45rem;
+}
+
+.profile-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profile-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
 }
 
 .profile-card {
-  padding: 0.25rem 0;
+  padding: 0.25rem 0 0.8rem 0;
 }
 
 .profile-avatar {
@@ -194,6 +208,17 @@ a:hover {
   display: grid;
   gap: 0.7rem;
   margin-top: 1rem;
+}
+
+.profile-link-group::before {
+  content: "English Resumes · Role-specific versions";
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+  opacity: 0.58;
+  margin: 0 0 0.05rem 0.1rem;
 }
 
 .profile-link-card {
@@ -386,6 +411,10 @@ a:hover {
 
   .profile-sidebar {
     position: static;
+    max-height: none;
+    overflow-y: visible;
+    overscroll-behavior: auto;
+    padding-right: 0;
   }
 
   .profile-card {
