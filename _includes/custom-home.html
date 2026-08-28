@@ -71,37 +71,20 @@
       </div>
 
       <div class="profile-link-group">
-        <a class="profile-link-card" href="{{ cv.english.file | relative_url }}">
-          <span class="profile-contact-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path>
-              <path d="M14 2v5h5"></path>
-              <path d="M9 13h6"></path>
-              <path d="M9 17h6"></path>
-              <path d="M9 9h1"></path>
-            </svg>
-          </span>
-          <span>
-            <span class="profile-link-title">English CV</span>
-            <span class="profile-link-sub">Updated {{ cv.english.updated }}</span>
-          </span>
-        </a>
-
-        <a class="profile-link-card" href="{{ cv.chinese.file | relative_url }}">
-          <span class="profile-contact-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path>
-              <path d="M14 2v5h5"></path>
-              <path d="M9 13h6"></path>
-              <path d="M9 17h6"></path>
-              <path d="M9 9h1"></path>
-            </svg>
-          </span>
-          <span>
-            <span class="profile-link-title">中文简历</span>
-            <span class="profile-link-sub">Updated {{ cv.chinese.updated }}</span>
-          </span>
-        </a>
+        {% for r in cv.resumes %}
+          <a class="profile-link-card" href="{{ r.file | relative_url }}">
+            <span class="profile-contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path>
+                <path d="M14 2v5h5"></path>
+                <path d="M9 13h6"></path>
+                <path d="M9 17h6"></path>
+                <path d="M9 9h1"></path>
+              </svg>
+            </span>
+            <span class="profile-link-title">{{ r.label }}</span>
+          </a>
+        {% endfor %}
       </div>
     </div>
   </aside>
