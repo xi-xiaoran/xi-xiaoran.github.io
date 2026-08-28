@@ -24,7 +24,7 @@ items:
 - start: Sep 2026
   end: May 2028
   institution: Yale University
-  school_logo: /images/logos/yale.png
+  school_logo: /images/logos/yale.png?v=20260828
   school_unit: Yale School of Public Health
   program: M.S. in Biostatistics (Data Science Track)
   location: New Haven, CT, USA
